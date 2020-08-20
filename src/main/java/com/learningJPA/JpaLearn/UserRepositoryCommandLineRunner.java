@@ -56,16 +56,16 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner{
 		List<User> all = userRepository.findAll();
 		log.info("All Users :"+all);
 		
-		//Update User
+		//Update User Rahul to Rahul R
 		
 		user.setName("Rahul R");
 		userRepository.save(user);
 		log.info("Updated user 1 name"+user);
 
-		//Delete user
+		//Delete user 
 		
 		userRepository.delete(user4);
-		log.info("Deleted user 4");
+		log.info("Deleted user ");
 
 	}
 
