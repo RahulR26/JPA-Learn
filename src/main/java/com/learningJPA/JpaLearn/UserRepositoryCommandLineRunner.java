@@ -26,6 +26,8 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner{
 		
 		//save user here
 		
+		//Created users
+		
 		User user = new User("Rahul", "Admin");
 		userRepository.save(user);
 		log.info("New User is created "+user);
@@ -46,15 +48,24 @@ public class UserRepositoryCommandLineRunner implements CommandLineRunner{
 		userRepository.save(user4);
 		log.info("New User is created "+user4);
 		
-		user.setName("Rahul R");
-		userRepository.save(user);
-		log.info("Updated user 1 name"+user);
+		//Read users 
 		
 		Optional<User> userWithID = userRepository.findById(2L);
 		log.info("User of id "+2L+" is "+userWithID);
 		
 		List<User> all = userRepository.findAll();
 		log.info("All Users :"+all);
+		
+		//Update User
+		
+		user.setName("Rahul R");
+		userRepository.save(user);
+		log.info("Updated user 1 name"+user);
+
+		//Delete user
+		
+		userRepository.delete(user4);
+		log.info("Deleted user 4");
 
 	}
 
